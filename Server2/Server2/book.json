@@ -1,0 +1,51 @@
+[
+  {
+    "Author": "Palahniuk",
+    "CoverLink": "C:\\Users\\User\\source\\repos\\TestProjectOne\\Images\\amine1.jpg",
+    "Id": 1,
+    "Name": "Lullaby",
+    "Pages": 400
+  },
+  {
+    "Author": "Vasilevich",
+    "CoverLink": "C:\\Users\\User\\source\\repos\\TestProjectOne\\Images\\anime2.jfif",
+    "Id": 2,
+    "Name": "island",
+    "Pages": 300
+  },
+  {
+    "Author": "Petrov",
+    "CoverLink": "C:\\Users\\User\\source\\repos\\TestProjectOne\\Images\\anime3.jpg",
+    "Id": 3,
+    "Name": "Dela",
+    "Pages": 534
+  },
+  {
+    "Author": "Petrov",
+    "CoverLink": "C:\\Users\\User\\source\\repos\\TestProjectOne\\Images\\anime4.jpg",
+    "Id": 8,
+    "Name": "Dela",
+    "Pages": 534
+  },
+  {
+    "Author": "Vasily",
+    "CoverLink": "C:\\Users\\User\\source\\repos\\TestProjectOne\\Images\\anime5.jpeg",
+    "Id": 4,
+    "Name": "Bax",
+    "Pages": 874
+  },
+  {
+    "Author": "Palahniuk",
+    "CoverLink": "C:\\Users\\User\\source\\repos\\TestProjectOne\\Images\\anime6.png",
+    "Id": 5,
+    "Name": "Wax",
+    "Pages": 9876
+  },
+  {
+    "Author": "Fadeev",
+    "CoverLink": "C:\\Users\\User\\source\\repos\\TestProjectOne\\Images\\anime7.jpeg",
+    "Id": 6,
+    "Name": "Codex",
+    "Pages": 1000
+  }
+]
