@@ -10,7 +10,7 @@ namespace ClientOne
     public class ApplicationViewModel : INotifyPropertyChanged
     {
         private Book selectedBook;
-        private static int freeId;
+        private static int freeId;        
 
         public ObservableCollection<Book> Books { get; set; }
         public Book SelectedBook

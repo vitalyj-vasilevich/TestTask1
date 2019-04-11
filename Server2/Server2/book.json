@@ -47,5 +47,12 @@
     "Id": 6,
     "Name": "Codex",
     "Pages": 1000
+  },
+  {
+    "Author": "Fadeev",
+    "CoverLink": "",
+    "Id": 15,
+    "Name": "No Photo(",
+    "Pages": 100
   }
 ]

@@ -15,8 +15,9 @@ namespace ClientOne
         public MainWindow()
         {
             InitializeComponent();
-
-            DataContext = new ApplicationViewModel();
+            ApplicationViewModel awm = new ApplicationViewModel();
+            ViewList.ItemsSource = awm.Books;
+            DataContext = awm;
         }
 
         private void EnableEditButton_CLick(object sender, RoutedEventArgs e)
@@ -44,6 +45,8 @@ namespace ClientOne
             writer.Close();
             /*var response = (HttpWebResponse)webRequest.GetResponse();
             response.Close();*/
+            ViewList.Items.RemoveAt(ViewList.SelectedIndex);
+            ViewList.SelectedItem = ViewList.Items.GetItemAt(0);
             MessageBox.Show("Removal Succeed");
         }
 
@@ -55,19 +58,30 @@ namespace ClientOne
 
         private void AcceptAddButton_Click(object sender, RoutedEventArgs e)
         {
+            Book book = new Book
+            {
+                Name = AddName.Text,
+                Author = AddAuthor.Text,
+                Pages = Convert.ToInt32(AddPages.Text),                      
+            };
+            book.CoverLink = "";
+            book.Id = 100;
+            WebRequest webRequest = WebRequest.Create(Url);
+            webRequest.Method = "PUT";
+            webRequest.ContentType = "text/json";
+            var writer = new StreamWriter(webRequest.GetRequestStream());
+            writer.Write(book.GetJson());
+            writer.Flush();
+            writer.Close();
+            ViewList.Items.Add(book);
             View.Visibility = Visibility.Visible;
             Add.Visibility = Visibility.Hidden;
+            MessageBox.Show("Successfully added");
         }
 
         private void AcceptEditButton_Click(object sender, RoutedEventArgs e)
         {
-            Book book = new Book
-            {
-                Name = AddName.Text,
-                Pages = Convert.ToInt32(AddPages.Text),
-                Author = AddAuthor.Text,
-                Id = 100
-            };
+            Book book = (Book)ViewList.SelectedItem;
             WebRequest webRequest = WebRequest.Create(Url);
             webRequest.Method = "PUT";
             webRequest.ContentType = "text/json";

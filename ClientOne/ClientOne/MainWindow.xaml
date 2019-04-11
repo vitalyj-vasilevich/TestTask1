@@ -67,11 +67,11 @@
         <StackPanel Grid.Column="1" DataContext="{Binding SelectedBook}" x:Name="Edit" Visibility="Hidden" Grid.RowSpan="2">
             <TextBlock Text="Chosen element" />
             <TextBlock Text="Name" />
-            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox x:Name="EditName" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
             <TextBlock Text="Author" />
-            <TextBox Text="{Binding Author, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox x:Name="EditAuthor" Text="{Binding Author, UpdateSourceTrigger=PropertyChanged}" />
             <TextBlock Text="Pages" />
-            <TextBox Text="{Binding Pages, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox x:Name="EditPages" Text="{Binding Pages, UpdateSourceTrigger=PropertyChanged}" />
             <StackPanel Name="DragAndDropArea" Drop="DragAndDrop_Drop" AllowDrop="True" Height="300" />
             <Button x:Name="AcceptEditButton" Content="Accept" Click="AcceptEditButton_Click"/>
         </StackPanel>

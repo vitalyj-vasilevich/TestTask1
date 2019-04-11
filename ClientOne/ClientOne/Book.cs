@@ -68,6 +68,12 @@ namespace ClientOne
             return json;
         }
 
+        public int CompareTo(Book book)
+        {
+            return (Name.CompareTo(book.Name) + Author.CompareTo(book.Author) + Pages.CompareTo(book.Pages)
+                + CoverLink.CompareTo(book.CoverLink) + Id.CompareTo(book.Id));
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName]string prop = "")
         {

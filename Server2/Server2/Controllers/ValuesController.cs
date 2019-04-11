@@ -41,6 +41,15 @@ namespace Server2.Controllers
             }                            
         }
 
+        public void UpdateFile()
+        {
+            using (StreamWriter sw = new StreamWriter("book.json"))
+            {
+                JsonSerializer jsonSerializer = new JsonSerializer();
+                jsonSerializer.Serialize(sw, typeof(Book[]));
+            }
+        }
+
         public Book GetBook(string json)
         {
             Book book = JsonConvert.DeserializeObject<Book>(json);
@@ -133,6 +142,7 @@ namespace Server2.Controllers
             {
                 books[index] = book;
             }
+            UpdateFile();
         }
 
         // DELETE api/values/5
@@ -150,6 +160,7 @@ namespace Server2.Controllers
                 }
                 Array.Resize(ref books, books.Length - 1);
             }
+            UpdateFile();
         }
     }
 }
